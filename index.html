@@ -5,14 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .fora{
+            position: relative;
+            height: 97.5vh;
+        }
+
+        .dentro{
+            animation-name: fade;
+            animation-duration: 3s;
+
+            height: 250px;
+            width: 300px;
+            border-radius: 5px;
+            padding: 40px;
+            
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%; 
+
+            background-color: white;           
+        }
+
+        @keyframes fade {
+            from {opacity: 0}
+            to {opacity: 100}
+            }
+
+        body{
+            background-image: linear-gradient(to bottom, #2291d3, #00628d);            
+        }
+
+        input[type=text], input[type=password]{
+            width: 90%;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            padding: 10px;
+            border: 2px solid #00628d;
+            color: #00628d;
+        }
+
+        input[type=text]:hover, input[type=password]:hover{
+            border: 2px solid #2291d3;
+        }
+
+        #user:focus, #password:focus{
+            border: 2px solid #2291d3;
+        }
+        
+
+        input[type=button]{
+            font-size: 1rem;
+            width: 300px;
+            padding: 10px;
+            background-color: #00628d;
+            color: white;
+            border: 0;
+            border-radius: 5px;
+            margin: auto;
+            display: block;
+        }
+
+        input[type=button]:hover{
+            background-color: #2291d3;
+        }
+
+        h1{
+            color: #00628d;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Login</h1>
-    <form>
-        <p><input type="text" name="user" id="user" required placeholder="equipe01@tech4me"></p>
-        <p><input type="password" name="password" id="password" required placeholder="Tech4me2021" ></p>
-        <p><input type="button" value="Login" onclick="auth()" ></p>
-    </form>
+    
+    <div class="fora">
+    <div class="dentro">
+        <h1>Login da Equipe</h1>
+        <form>
+            <p><input type="text" name="user" id="user" maxlength="16" placeholder="equipe01@tech4me"></p>
+            <p><input type="password" name="password" id="password" maxlength="11" placeholder="Tech4me2021" ></p>
+            <p><input type="button" value="Login" onclick="auth()" ></p>
+        </form>
+    </div>
+</div>
 
     <script src="users.js"></script>
 </body>
